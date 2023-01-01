@@ -19,7 +19,7 @@ let circleTurn
 
 startGame()
 
-restartButton.addEventListener('click', startGame())
+restartButton.addEventListener('click', startGame)
 
 function startGame(){
     circleTurn = false
@@ -50,7 +50,8 @@ function handleClick(e) {
 function endGame(draw){
     if(draw){
         winningMessageTextElement.innerText = 'Draw!'
-    }else{
+    }
+    else{
         winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
     }
     winningMessageElement.classList.add('show')
@@ -75,7 +76,8 @@ function setBoardHoverClass(){
     board.classList.remove(CIRCLE_CLASS)
     if(circleTurn){
         board.classList.add(CIRCLE_CLASS)
-    }else{
+    }
+    else{
         board.classList.add(X_CLASS)
     }
 }
